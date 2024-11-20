@@ -48,10 +48,7 @@ export class Modal extends Component {
   }
 
   componentWillUnmount() {
-    DeviceEventEmitter.removeListener(
-      "didUpdateDimensions",
-      this.handleDimensionsUpdate
-    );
+    DeviceEventEmitter.removeAllListeners("didUpdateDimensions");
     this._isMounted = false;
   }
 
